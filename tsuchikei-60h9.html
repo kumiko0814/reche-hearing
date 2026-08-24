@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>つちけいさんの成長シート｜Merone</title>
+<style>
+:root{
+  --bg:#fdeef3; --bg2:#faf1f6; --pinkbg:#fbe7ef; --paper:#ffffff;
+  --plum:#574a58; --plum2:#463a48; --pink:#f0a2c5; --pinkd:#c66f96;
+  --blue:#8fbfe6; --blued:#5f97be; --ink:#4f454e; --sub:#9a8993; --line:#f3e3ec;
+  --grad:linear-gradient(135deg,#F5A6C8,#B98BEA);
+  --grad-r:linear-gradient(135deg,#F5A6C8,#C99BE8);
+  --grad-lav:linear-gradient(150deg,#C99BE8,#9E77D6);
+}
+*{box-sizing:border-box; -webkit-tap-highlight-color:transparent; margin:0; padding:0;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  background:linear-gradient(180deg,#fdf1f4 0%,#fbe9ee 55%,#f3f0f7 100%);
+  color:var(--ink); line-height:1.85; letter-spacing:.01em;
+  font-family:"Yu Gothic","YuGothic","游ゴシック","Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;
+  display:flex; justify-content:center; overflow-x:hidden;
+  -webkit-font-smoothing:antialiased; -webkit-overflow-scrolling:touch;
+}
+img{max-width:100%; height:auto;}
+h1,h2,h3{word-break:auto-phrase;}
+.app{width:100%; max-width:480px; min-height:100vh; position:relative; padding-bottom:60px;}
+
+/* ===== header ===== */
+.hud{display:flex; align-items:center; gap:10px; padding:13px 16px; background:var(--paper);
+  border-bottom:1px solid var(--line); position:sticky; top:0; z-index:20;
+  box-shadow:0 6px 18px -14px rgba(87,74,88,.35);}
+.hud img{width:92px; display:block;}
+.hud .who{margin-left:auto; font-size:11px; font-weight:800; color:#fff; background:var(--grad);
+  border-radius:999px; padding:6px 13px; letter-spacing:.04em; box-shadow:0 4px 12px rgba(185,139,234,.3);}
+
+/* progress */
+.prog{position:sticky; top:57px; z-index:19; padding:8px 14px 6px;
+  background:linear-gradient(180deg,#fdf1f4 70%,rgba(253,241,244,0));}
+.prog .pill{background:rgba(255,255,255,.94); border:1px solid var(--line); border-radius:999px;
+  padding:8px 16px; display:flex; align-items:center; gap:10px;
+  box-shadow:0 8px 20px -12px rgba(87,74,88,.35);}
+.prog .lbl{font-size:11px; font-weight:800; color:var(--plum); white-space:nowrap;}
+.prog .bar{flex:1; height:8px; border-radius:20px; background:#f6e7ef; overflow:hidden;}
+.prog .fill{height:100%; width:0%; background:linear-gradient(90deg,var(--blue),var(--pink)); border-radius:20px; transition:width .35s;}
+.prog .cheer{font-size:10.5px; font-weight:700; color:var(--pinkd); white-space:nowrap;}
+
+/* ===== hero ===== */
+.hero{padding:18px 16px 4px;}
+.hero .card{position:relative; overflow:visible;}
+.card{background:var(--paper); border:1px solid var(--line); border-radius:20px;
+  box-shadow:0 12px 28px -18px rgba(87,74,88,.35); }
+.hero .in{padding:20px 18px 18px; display:flex; gap:14px; align-items:flex-start;}
+.hero .ava{flex:none; width:72px; height:72px; border-radius:999px; overflow:hidden;
+  border:3px solid #fff; box-shadow:0 6px 16px rgba(198,111,150,.28); background:#fff;}
+.hero .ava img{width:100%; height:100%; object-fit:cover;}
+.hero .msg{flex:1; min-width:0;}
+.hero .name{font-size:16.5px; font-weight:800; color:var(--plum2); letter-spacing:.03em; line-height:1.5;}
+.hero .name i{font-style:normal; font-size:11px; color:#fff; background:var(--grad-lav); border-radius:999px; padding:2px 10px; margin-left:6px; vertical-align:2px;}
+.hero .msg p{font-size:12.5px; margin-top:6px;}
+.hero .from{font-size:10.5px; color:var(--sub); margin-top:6px; text-align:right;}
+.hero .chips{display:flex; gap:6px; padding:0 18px 16px; flex-wrap:wrap;}
+.hero .chips i{font-style:normal; font-size:10.5px; font-weight:700; color:var(--plum);
+  background:var(--bg2); border:1px solid var(--line); border-radius:999px; padding:4px 11px;}
+
+/* ===== steps mini ===== */
+.flow{display:flex; gap:8px; padding:12px 16px 4px;}
+.flow .f{flex:1; background:var(--paper); border:1px solid var(--line); border-radius:16px; padding:12px 10px; text-align:center;
+  box-shadow:0 10px 22px -18px rgba(87,74,88,.35);}
+.flow .n{width:26px; height:26px; margin:0 auto 6px; border-radius:999px; color:#fff; font-weight:800; font-size:12.5px;
+  display:flex; align-items:center; justify-content:center; background:var(--grad);}
+.flow .f:nth-child(2) .n{background:var(--grad-r);}
+.flow .f:nth-child(3) .n{background:var(--grad-lav);}
+.flow b{display:block; font-size:11.5px; color:var(--plum2); line-height:1.5;}
+.flow s{display:block; text-decoration:none; font-size:9.5px; color:var(--sub); margin-top:2px;}
+
+/* ===== form sections ===== */
+section{padding:16px 16px 0;}
+.sec-h{display:flex; align-items:center; gap:8px; margin:6px 2px 10px;}
+.sec-h .tag{font-size:10px; font-weight:800; letter-spacing:.16em; color:#fff; background:var(--grad-lav);
+  border-radius:999px; padding:3px 12px;}
+.sec-h b{font-size:14.5px; color:var(--plum2); letter-spacing:.03em;}
+.sec-h small{font-size:10.5px; color:var(--sub); font-weight:600; margin-left:auto;}
+.form{padding:6px 16px 16px;}
+.q{padding:12px 0 2px; border-bottom:1px dashed var(--line);}
+.q:last-child{border-bottom:none;}
+.q label{display:flex; gap:8px; align-items:flex-start; font-size:13px; font-weight:800; color:var(--plum2); line-height:1.7;}
+.q .no{flex:none; font-size:10.5px; font-weight:800; color:var(--pinkd); background:var(--pinkbg);
+  border-radius:8px; padding:2px 8px; margin-top:2px; letter-spacing:.03em;}
+.q .hint{font-size:11px; color:var(--sub); margin:2px 0 6px; padding-left:2px;}
+.q input,.q textarea{
+  width:100%; border:1.5px solid var(--line); background:#fffdfd; border-radius:13px;
+  padding:11px 13px; font-size:15px; line-height:1.7; color:var(--ink); font-family:inherit;
+  margin:4px 0 12px; -webkit-appearance:none; appearance:none;}
+.q textarea{min-height:76px; resize:vertical;}
+.q input:focus,.q textarea:focus{outline:none; border-color:var(--pink); box-shadow:0 0 0 3px rgba(240,162,197,.18);}
+.q input::placeholder,.q textarea::placeholder{color:#c9bcc4;}
+
+/* ===== send ===== */
+.send{padding:20px 16px 4px;}
+.btn{display:block; width:100%; border:none; cursor:pointer; padding:16px; border-radius:16px;
+  font-size:15.5px; font-weight:800; font-family:inherit; letter-spacing:.06em;
+  background:var(--grad); color:#fff; box-shadow:0 10px 24px rgba(185,139,234,.35);}
+.btn:active{transform:translateY(1px);}
+.btn[disabled]{opacity:.6;}
+.send .note{text-align:center; font-size:11px; color:var(--sub); margin-top:8px;}
+.sentbox{display:none; margin-top:12px; text-align:center; padding:20px 16px;
+  background:var(--paper); border:1px solid var(--line); border-radius:20px;
+  box-shadow:0 12px 28px -18px rgba(87,74,88,.35);}
+.sentbox.on{display:block;}
+.sentbox img{height:120px; width:auto;}
+.sentbox b{display:block; font-size:15px; color:var(--plum2); margin-top:8px;}
+.sentbox p{font-size:12px; color:var(--ink); margin-top:4px;}
+.sentbox .when{font-size:10.5px; color:var(--sub); margin-top:6px;}
+
+/* ===== letter ===== */
+.letterwrap{padding:24px 16px 8px;}
+.letter-h{text-align:center; margin-bottom:12px;}
+.letter-h .en{font-size:10px; letter-spacing:.4em; color:#a98bc9; font-weight:800; padding-left:.4em;}
+.letter-h b{display:block; font-size:16px; color:var(--plum2); letter-spacing:.05em; margin-top:2px;}
+.paper{position:relative; background:#fffefb; border:1px solid #f0e6ee; border-radius:18px;
+  box-shadow:0 14px 30px -18px rgba(87,74,88,.4); padding:26px 20px 22px; overflow:hidden;}
+.paper::before{content:""; position:absolute; top:-10px; left:50%; transform:translateX(-50%) rotate(-2deg);
+  width:96px; height:26px; background:rgba(245,166,200,.45); border-left:1px dashed rgba(255,255,255,.8); border-right:1px dashed rgba(255,255,255,.8);}
+.paper .fromrow{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+.paper .fromrow .av{width:44px; height:44px; border-radius:999px; overflow:hidden; border:2px solid #fff;
+  box-shadow:0 4px 10px rgba(198,111,150,.3); background:#fff; flex:none;}
+.paper .fromrow .av img{width:100%; height:100%; object-fit:cover;}
+.paper .fromrow b{font-size:12.5px; color:var(--plum2);}
+.paper .fromrow s{display:block; text-decoration:none; font-size:10px; color:var(--sub); font-weight:600;}
+.paper .body p{font-size:13px; color:var(--plum2); line-height:2.1; margin-bottom:10px;}
+.paper .waiting{text-align:center; padding:10px 0 4px;}
+.paper .waiting .env{font-size:34px; line-height:1;}
+.paper .waiting b{display:block; font-size:13.5px; color:var(--plum2); margin-top:8px;}
+.paper .waiting p{font-size:12px; color:var(--sub); margin-top:6px; line-height:2;}
+
+/* letter content blocks（レター記入時に使用） */
+.paper .fb-block{margin-top:14px; border:1px solid var(--line); border-radius:14px; padding:14px 14px 12px; background:#fff;}
+.paper .fb-block h4{font-size:12px; color:var(--pinkd); letter-spacing:.06em; margin-bottom:8px;}
+.paper .fb-block.n h4{color:var(--blued);}
+.paper .fb-block li{list-style:none; position:relative; padding-left:14px; font-size:12.5px; color:var(--ink); margin-top:6px;}
+.paper .fb-block li::before{content:""; position:absolute; left:0; top:.7em; width:7px; height:7px; border-radius:999px; background:var(--pink);}
+.paper .fb-block.n li::before{background:var(--blue);}
+.paper .first{margin-top:14px; border:2px solid var(--pink); border-radius:16px; padding:14px; text-align:center; background:#fffafc;}
+.paper .first .t{font-size:10px; font-weight:800; letter-spacing:.3em; color:var(--pinkd); padding-left:.3em;}
+.paper .first b{display:block; font-size:14.5px; color:var(--plum2); margin-top:4px; line-height:1.8;}
+.paper .first p{font-size:11.5px; color:var(--ink); margin-top:4px;}
+.tiles{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:14px;}
+.tile{border:1px solid var(--line); border-radius:14px; padding:10px 12px; background:#fff;}
+.tile .l{font-size:10px; color:var(--sub); font-weight:700;}
+.tile .v{font-size:17px; color:var(--plum2); font-weight:800;}
+.tile .v small{font-size:10.5px; color:var(--sub); font-weight:700;}
+.tile .m{margin-top:6px; height:6px; border-radius:6px; background:#f6e7ef; overflow:hidden;}
+.tile .m i{display:block; height:100%; background:linear-gradient(90deg,var(--blue),var(--pink)); border-radius:6px;}
+.tile .p{font-size:9.5px; color:var(--plum); font-weight:700; margin-top:3px;}
+
+/* ===== footer ===== */
+footer{text-align:center; padding:30px 16px 96px;}
+footer img{width:84px; opacity:.9;}
+footer p{font-size:10.5px; color:var(--sub); margin-top:8px;}
+
+/* ===== toast ===== */
+#toast{position:fixed; left:50%; transform:translateX(-50%); bottom:90px; z-index:80; display:none;
+  background:rgba(70,58,72,.92); color:#fff; font-size:12px; font-weight:700; border-radius:999px; padding:10px 18px; max-width:86vw; text-align:center;}
+#toast.on{display:block;}
+
+/* ===== bug tool ===== */
+#bugL{position:fixed; left:12px; bottom:16px; z-index:59; background:rgba(255,255,255,.92); border:1px solid #eadfe7; color:#a2949d; font-size:10.5px; font-weight:800; border-radius:999px; padding:5px 12px; cursor:pointer; letter-spacing:.04em;}
+#bugM{position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(70,58,72,.55); display:none; align-items:center; justify-content:center; z-index:70; padding:24px;}
+#bugM.on{display:flex;}
+#bugM .bx{background:#fff; border-radius:20px; padding:22px 20px; max-width:360px; width:100%;}
+#bugM h3{font-size:14.5px; color:var(--plum2); margin-bottom:8px;}
+#bugM textarea{width:100%; border:1.5px solid var(--line); border-radius:12px; padding:11px 13px; font-size:14px; line-height:1.8; color:var(--plum2); font-family:inherit; min-height:100px; resize:vertical;}
+#bugM .bb{display:flex; gap:8px; margin-top:12px;}
+#bugM button{flex:1; border:none; border-radius:999px; padding:11px; font-size:13px; font-weight:800; cursor:pointer; font-family:inherit;}
+#bugM .s{background:var(--grad); color:#fff;}
+#bugM .c{background:#f3eef2; color:var(--plum);}
+#bugM .done{display:none; font-size:12.5px; color:var(--pinkd); font-weight:800; margin-top:8px; text-align:center;}
+
+/* debug overlay */
+#dbg{display:none; position:fixed; left:8px; right:8px; top:8px; z-index:99; background:rgba(70,58,72,.94); color:#fff; font-size:11px; border-radius:10px; padding:10px 12px; max-height:45vh; overflow:auto; -webkit-overflow-scrolling:touch; line-height:1.6;}
+</style>
+</head>
+<body>
+<div class="app">
+
+<div class="hud">
+  <img src="reche-logo-transparent.png?v=20260824b" alt="Re:che">
+  <div class="who">つちけいさん専用</div>
+</div>
+
+<div class="prog"><div class="pill">
+  <span class="lbl">かいとう <b id="pgN">0</b>/12</span>
+  <span class="bar"><span class="fill" id="pgF"></span></span>
+  <span class="cheer" id="pgC">きがるにどうぞ</span>
+</div></div>
+
+<div class="hero">
+  <div class="card">
+    <div class="in">
+      <div class="ava"><img src="kumiko-head-avatar.png?v=20260824b" alt=""></div>
+      <div class="msg">
+        <div class="name">つちけいさん<i>専用シート</i></div>
+        <p>こんにちは☺️ いつもご協力をありがとうございます。つちけいさんの「今」と「これから」を教えてください。読ませていただいて、つちけいさん専用のおてがみをこのページにお届けします。</p>
+        <p class="from">森川くみこ＆AIチーム</p>
+      </div>
+    </div>
+    <div class="chips">
+      <i>全部で15分くらい</i><i>空欄があっても大丈夫</i><i>あとから書き直しOK</i>
+    </div>
+  </div>
+</div>
+
+<div class="flow">
+  <div class="f"><div class="n">1</div><b>質問に答える</b><s>このページで入力</s></div>
+  <div class="f"><div class="n">2</div><b>送信ボタンを押す</b><s>それだけで完了</s></div>
+  <div class="f"><div class="n">3</div><b>おてがみが届く</b><s>このページに掲載</s></div>
+</div>
+
+<!-- STEP1 -->
+<section>
+  <div class="sec-h"><span class="tag">STEP 1</span><b>目標のこと</b><small>4つ</small></div>
+  <div class="card form">
+    <div class="q">
+      <label><span class="no">Q1</span>目指したい月間の売上はいくらですか？</label>
+      <input id="q1" type="text" placeholder="例）15万円">
+    </div>
+    <div class="q">
+      <label><span class="no">Q2</span>目指したい月間の利益はいくらですか？</label>
+      <p class="hint">仕入れ・送料・手数料を引いて、手もとに残したい金額です</p>
+      <input id="q2" type="text" placeholder="例）5万円">
+    </div>
+    <div class="q">
+      <label><span class="no">Q3</span>いつまでに達成したいですか？</label>
+      <input id="q3" type="text" placeholder="例）2026年12月まで">
+    </div>
+    <div class="q">
+      <label><span class="no">Q4</span>達成できたら、何に使いたいですか？どんな毎日にしたいですか？</label>
+      <textarea id="q4" placeholder="例）家族旅行に行きたい、など自由にどうぞ"></textarea>
+    </div>
+  </div>
+</section>
+
+<!-- STEP2 -->
+<section>
+  <div class="sec-h"><span class="tag">STEP 2</span><b>時間とリソースのこと</b><small>5つ</small></div>
+  <div class="card form">
+    <div class="q">
+      <label><span class="no">Q5</span>出品などの作業に使える時間は、週にどのくらいですか？</label>
+      <input id="q5" type="text" placeholder="例）週6時間（平日の夜に1時間ずつ）">
+    </div>
+    <div class="q">
+      <label><span class="no">Q6</span>作業しやすい時間帯はいつですか？</label>
+      <input id="q6" type="text" placeholder="例）21時以降">
+    </div>
+    <div class="q">
+      <label><span class="no">Q7</span>毎月の仕入れに使える金額はいくらまでですか？</label>
+      <input id="q7" type="text" placeholder="例）3万円まで">
+    </div>
+    <div class="q">
+      <label><span class="no">Q8</span>在庫を置けるスペースはどのくらいありますか？</label>
+      <input id="q8" type="text" placeholder="例）押し入れの半分">
+    </div>
+    <div class="q">
+      <label><span class="no">Q9</span>撮影・出品・梱包・発送のうち、得意な工程と苦手な工程はどれですか？</label>
+      <textarea id="q9" placeholder="例）撮影は好き。価格を決めるのが苦手"></textarea>
+    </div>
+  </div>
+</section>
+
+<!-- STEP3 -->
+<section>
+  <div class="sec-h"><span class="tag">STEP 3</span><b>3点セット</b><small>リンクを貼るだけ</small></div>
+  <div class="card form">
+    <div class="q">
+      <label><span class="no">1</span>在庫管理シートのリンク</label>
+      <p class="hint">ふだんお使いのスプレッドシートのURLをそのまま貼ってください（整っていなくて大丈夫）</p>
+      <input id="k1" type="url" placeholder="https://docs.google.com/…">
+    </div>
+    <div class="q">
+      <label><span class="no">2</span>メルカリアカウントのリンク</label>
+      <p class="hint">プロフィールページのURLをコピーして貼ってください</p>
+      <input id="k2" type="url" placeholder="https://jp.mercari.com/user/profile/…">
+    </div>
+    <div class="q">
+      <label><span class="no">3</span>1日あたりの出品数</label>
+      <p class="hint">直近1週間の、だいたいの目安で大丈夫です</p>
+      <input id="k3" type="text" placeholder="例）1〜2点">
+    </div>
+    <div class="q">
+      <label><span class="no">＋</span>そのほか、伝えておきたいこと（任意）</label>
+      <textarea id="memo" placeholder="困っていること、聞いてみたいこと、なんでもどうぞ"></textarea>
+    </div>
+  </div>
+</section>
+
+<div class="send">
+  <button class="btn" id="sendB">この内容で送信する</button>
+  <p class="note">送ったあとも、何度でも書き直して再送信できます</p>
+  <div class="sentbox" id="sentBox">
+    <img src="kumiko-pink-peace.png?v=20260824b" alt="">
+    <b>届きました、ありがとうございます！</b>
+    <p>じっくり読ませていただいて、おてがみを書きますね。<br>楽しみに待っていてください。</p>
+    <p class="when" id="sentWhen"></p>
+  </div>
+</div>
+
+<!-- LETTER -->
+<div class="letterwrap">
+  <div class="letter-h"><span class="en">LETTER</span><b>つちけいさんへのおてがみ</b></div>
+  <div class="paper">
+    <div class="fromrow">
+      <div class="av"><img src="kumiko-head-avatar.png?v=20260824b" alt=""></div>
+      <div><b>森川くみこ＆AIチーム</b><s>Merone</s></div>
+    </div>
+    <div id="letterBody">
+      <div class="waiting">
+        <div class="env">🕊️</div>
+        <b>おてがみは、ただいま準備中です</b>
+        <p>つちけいさんの回答が届いたら、ふたりでじっくり読んで<br>ここにおてがみを書きます。少しだけ待っていてくださいね。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <img src="reche-logo-transparent.png?v=20260824b" alt="Re:che">
+  <p>このシートはつちけいさん専用のページです。URLの取り扱いにはご注意ください。</p>
+  <p>© Merone</p>
+</footer>
+
+</div><!-- /.app -->
+
+<div id="toast"></div>
+
+<!-- バグ報告ツール -->
+<div id="bugL">不具合を報告</div>
+<div id="bugM"><div class="bx">
+  <h3>不具合・気になったことを教えてください</h3>
+  <textarea id="bugT" placeholder="例）送信ボタンを押しても反応しませんでした（iPhone/Safari）"></textarea>
+  <div class="bb"><button class="c" id="bugC">閉じる</button><button class="s" id="bugS">送信する</button></div>
+  <div class="done" id="bugD">届きました。ありがとうございます。すぐ確認します。</div>
+</div></div>
+
+<div id="dbg"></div>
+
+<script>
+(function(){
+"use strict";
+/* ===== 設定（生徒ごとにここだけ変える） ===== */
+var CFG={ student:"つちけい", memberId:"hearing_tsuchikei" };
+/* レター本文が決まったら、下のLETTERにHTML文字列を入れる（nullなら準備中表示） */
+var LETTER=null;
+
+var U="https://inrvprlyobghviklulcv.supabase.co/rest/v1/ailab_notes";
+var K="sb_publishable_ZrCNcsRHMci-l7Fns8QtIA_X22XZGJp";
+var P=new URLSearchParams(location.search);
+var demo=P.get("demo")==="1";
+var FIELDS=["q1","q2","q3","q4","q5","q6","q7","q8","q9","k1","k2","k3"];
+var LABELS={q1:"目指したい月間売上",q2:"目指したい月間利益",q3:"いつまでに",q4:"達成したら何をしたいか",
+  q5:"週に使える作業時間",q6:"作業しやすい時間帯",q7:"毎月の仕入れ予算",q8:"在庫スペース",q9:"得意な工程・苦手な工程",
+  k1:"在庫管理シートURL",k2:"メルカリアカウントURL",k3:"1日あたりの出品数",memo:"そのほか"};
+var LS="hearing_"+CFG.memberId+"_v1";
+function $(id){ return document.getElementById(id); }
+function val(id){ var el=$(id); return el?el.value.trim():""; }
+
+/* ===== レター描画 ===== */
+if(LETTER){ $("letterBody").innerHTML=LETTER; }
+
+/* ===== 下書きの自動保存・復元 ===== */
+try{
+  var saved=JSON.parse(localStorage.getItem(LS)||"{}");
+  FIELDS.concat(["memo"]).forEach(function(id){ if(saved[id] && $(id)) $(id).value=saved[id]; });
+  if(saved.__sentAt){ showSent(saved.__sentAt); }
+}catch(e){}
+function persist(){
+  try{
+    var d={}; FIELDS.concat(["memo"]).forEach(function(id){ d[id]=val(id); });
+    var old=JSON.parse(localStorage.getItem(LS)||"{}");
+    if(old.__sentAt) d.__sentAt=old.__sentAt;
+    localStorage.setItem(LS,JSON.stringify(d));
+  }catch(e){}
+}
+
+/* ===== 進捗 ===== */
+function refresh(){
+  var n=0; FIELDS.forEach(function(id){ if(val(id)) n++; });
+  $("pgN").textContent=n;
+  $("pgF").style.width=Math.round(n/FIELDS.length*100)+"%";
+  var c=$("pgC");
+  if(n===0) c.textContent="きがるにどうぞ";
+  else if(n<FIELDS.length) c.textContent="あと"+(FIELDS.length-n)+"つ";
+  else c.textContent="ぜんぶ書けました✨";
+  return n;
+}
+FIELDS.concat(["memo"]).forEach(function(id){
+  var el=$(id); if(!el) return;
+  el.addEventListener("input",function(){ refresh(); persist(); });
+});
+refresh();
+
+/* ===== 送信 ===== */
+function toast(m){
+  var t=$("toast"); t.textContent=m; t.classList.add("on");
+  setTimeout(function(){ t.classList.remove("on"); },2600);
+}
+function fmtNow(){
+  var d=new Date();
+  return d.getFullYear()+"年"+(d.getMonth()+1)+"月"+d.getDate()+"日 "+d.getHours()+":"+("0"+d.getMinutes()).slice(-2);
+}
+function showSent(when){
+  $("sentBox").classList.add("on");
+  $("sentWhen").textContent=when?when+" に送信済み・書き直して再送もできます":"";
+  $("sendB").textContent="書き直して再送信する";
+}
+function buildBody(){
+  var lines=["【"+CFG.student+"さん ヒアリング回答】"];
+  lines.push("--- 目標 ---");
+  ["q1","q2","q3","q4"].forEach(function(id){ lines.push(LABELS[id]+"："+(val(id)||"（未記入）")); });
+  lines.push("--- リソース ---");
+  ["q5","q6","q7","q8","q9"].forEach(function(id){ lines.push(LABELS[id]+"："+(val(id)||"（未記入）")); });
+  lines.push("--- 3点セット ---");
+  ["k1","k2","k3"].forEach(function(id){ lines.push(LABELS[id]+"："+(val(id)||"（未記入）")); });
+  if(val("memo")) lines.push("--- そのほか ---\n"+val("memo"));
+  return lines.join("\n");
+}
+$("sendB").addEventListener("click",function(){
+  var n=refresh();
+  if(n===0 && !val("memo")){ toast("1つでも書けたら、送信できます"); return; }
+  var btn=this; btn.disabled=true;
+  function ok(){
+    var when=fmtNow();
+    try{
+      var d=JSON.parse(localStorage.getItem(LS)||"{}"); d.__sentAt=when;
+      localStorage.setItem(LS,JSON.stringify(d));
+    }catch(e){}
+    showSent(when); btn.disabled=false;
+    $("sentBox").scrollIntoView({behavior:"smooth",block:"center"});
+  }
+  if(demo){ ok(); return; }
+  fetch(U,{method:"POST",headers:{apikey:K,Authorization:"Bearer "+K,"Content-Type":"application/json"},
+    body:JSON.stringify({member_id:CFG.memberId,member_name:CFG.student,mood:"ヒアリング回答",
+      worry:buildBody(),want:location.href.slice(0,180)})})
+    .then(function(r){ if(!r.ok) throw new Error("bad status"); ok(); })
+    .catch(function(){ btn.disabled=false; toast("送信できませんでした。通信環境をご確認ください"); });
+});
+
+/* ===== バグ報告 ===== */
+var M=$("bugM");
+$("bugL").onclick=function(){ M.classList.add("on"); };
+$("bugC").onclick=function(){ M.classList.remove("on"); $("bugD").style.display="none"; };
+$("bugS").onclick=function(){
+  var t=val("bugT");
+  if(!t){ $("bugT").focus(); return; }
+  var btn=this; btn.disabled=true;
+  function done(){
+    $("bugD").style.display="block"; $("bugT").value=""; btn.disabled=false;
+    setTimeout(function(){ M.classList.remove("on"); $("bugD").style.display="none"; },1800);
+  }
+  if(demo){ done(); return; }
+  fetch(U,{method:"POST",headers:{apikey:K,Authorization:"Bearer "+K,"Content-Type":"application/json"},
+    body:JSON.stringify({member_id:"bug_reche-hearing",member_name:"ヒアリングシート｜"+CFG.memberId,mood:"バグ報告",worry:t,want:location.href.slice(0,180)+" ／ "+navigator.userAgent.slice(0,140)})})
+    .then(function(){ done(); }).catch(function(){ btn.disabled=false; alert("送信できませんでした。通信環境をご確認ください。"); });
+};
+
+/* ===== debug: ?debug=1 画面内ロガー＋はみ出し検査、?selftest=1 自動入力→送信（demoと併用） ===== */
+if(P.get("debug")==="1"){
+  var D=$("dbg"); D.style.display="block";
+  var add=function(m){ var d=document.createElement("div"); d.textContent=m; D.appendChild(d); };
+  window.onerror=function(msg,src,line){ add("ERR: "+msg+" @"+line); };
+  window.addEventListener("load",function(){
+    var w=document.documentElement.clientWidth, cnt=0;
+    document.querySelectorAll("body *").forEach(function(el){
+      var r=el.getBoundingClientRect();
+      if(r.right>w+1 && r.width>0){ cnt++; if(cnt<=12) add("OVERFLOW: "+el.tagName+"."+(el.className||"").toString().slice(0,40)+" right="+Math.round(r.right)); }
+    });
+    add(cnt===0?"overflow check OK (vw="+w+")":"overflow total: "+cnt+" (vw="+w+")");
+  });
+}
+if(P.get("selftest")==="1"){
+  window.addEventListener("load",function(){
+    FIELDS.forEach(function(id,i){ $(id).value="テスト入力"+(i+1); $(id).dispatchEvent(new Event("input")); });
+    $("memo").value="セルフテストです"; $("memo").dispatchEvent(new Event("input"));
+    setTimeout(function(){ $("sendB").click(); },300);
+  });
+}
+})();
+</script>
+</body>
+</html>
