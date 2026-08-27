@@ -116,6 +116,7 @@ section{padding:16px 16px 0;}
 
 /* ===== letter ===== */
 .letterwrap{padding:24px 16px 8px;}
+.mailband{display:block; margin:0 18px 16px; text-align:center; background:var(--grad); color:#fff; border-radius:999px; padding:11px; font-size:12.5px; font-weight:800; text-decoration:none; letter-spacing:.04em; box-shadow:0 8px 18px rgba(185,139,234,.35);}
 .letter-h{text-align:center; margin-bottom:12px;}
 .letter-h .en{font-size:10px; letter-spacing:.4em; color:#a98bc9; font-weight:800; padding-left:.4em;}
 .letter-h b{display:block; font-size:16px; color:var(--plum2); letter-spacing:.05em; margin-top:2px;}
@@ -307,7 +308,7 @@ footer p{font-size:10.5px; color:var(--sub); margin-top:8px;}
 </div>
 
 <!-- LETTER -->
-<div class="letterwrap">
+<div class="letterwrap" id="letter">
   <div class="letter-h"><span class="en">LETTER</span><b>みちこさんへのおてがみ</b></div>
   <div class="paper">
     <div class="fromrow">
@@ -351,7 +352,27 @@ footer p{font-size:10.5px; color:var(--sub); margin-top:8px;}
 /* ===== 設定（生徒ごとにここだけ変える） ===== */
 var CFG={ student:"みちこ", memberId:"hearing_michiko" };
 /* レター本文が決まったら、下のLETTERにHTML文字列を入れる（nullなら準備中表示） */
-var LETTER=null;
+var LETTER=`
+<p>みちこさん、ご回答と3点セットをありがとうございました。シートもメルカリのページも、じっくり拝見しました。</p>
+<p>まず結論から。みちこさんの「売る腕」は、もう合格点です。売れた商品の約6割が出品から1週間以内に旅立ち、6月は利益¥98,823——目標の月10万まで、あと¥1,177の月がすでにあります。だからここからは腕を磨く話ではなく、「仕組み」を3つ変える話をします。①出す数をならす、②単価を上げる、③待機在庫を動かす、です。</p>
+<p>利益は5月¥25,383→6月¥98,823→7月¥55,161→8月は週¥8,000前後と、波があります。実力の問題ではなく、出品数がそのまま利益に直結する売り方だということです。逆に言えば、出品をならせば利益もならせます。</p>
+<div class="fb-block"><h4>よかったところ</h4><ul>
+<li><b>売れるまでが速い。</b>約6割が1週間以内。販売率も6月75%・7月72%と、Meroneの目安30%を大幅に超えています。</li>
+<li><b>キャラグッズの目利きと撮影。</b>高く売れた上位はSPY×FAMILY香水¥4,299・呪術廻戦図録¥3,999・ほぼ日手帳¥3,350。ぬい撮りの得意が、そのまま武器になっています。</li>
+<li><b>記録が続いている。</b>週報まで書けている方は、必ず伸びます。</li>
+</ul></div>
+<div class="fb-block n"><h4>のびしろ（ここからが本題です）</h4><ul>
+<li><b>出品の平準化。</b>撮影は休日にまとめて済ませ、平日22時は「出すだけ」に分業。週10点（平日1点＋休日5点）を固定ラインに。みちこさんの売れるスピードなら、出した分だけ返ってきます。</li>
+<li><b>低単価品に時間が食われています。</b>売上単価は6月¥2,052→7月¥1,433、8月には¥262の週もありました。1点にかかる手間は、値段に関係なく同じです。予想売価1,500円未満の物は単品で出さず、シリーズごとのまとめ売りに。ご自身が週報に書いていた「単価の安い物が増えて利益が伸びない」は、まさに正解の気づきです。</li>
+<li><b>待機中の約90点を動かす。</b>5〜6月に出品した在庫が90点ちかく眠っています。週末と水曜のセール、100円値下げで検索上位に戻れます。3ヶ月動かない物は、価格・写真・説明文のどれかを必ず変える。SPY×FAMILYパーカー4点は、まとめ売りが向いています。</li>
+<li><b>仕入れの筋肉を今から育てる。</b>2029年の利益10万を不要品だけで続けるのは、在庫が尽きるため構造的に難しいです。月1万円の仕入れを「小型のグッズ・ホビー系」に固定して、仕入れ→売るの練習を今から。撮影が得意で、段ボール1箱でも回るジャンルです。</li>
+<li><b>アパレルは深追いしない。</b>苦手な物は、まとめ売りの型で軽く処理を。AIの出品文はそのままで大丈夫ですが、実寸・状態・検索キーワードの3つだけは手で足してください。検索からの流入が変わります。</li>
+</ul></div>
+<div class="first"><span class="t">FIRST STEP</span><b>休日にまとめ撮り→平日22時に1点ずつ、週10点に戻す</b><p>余裕があれば：SPY×FAMILYパーカー4点のまとめ売り化／1,500円未満の待機在庫をシリーズごとにセット化</p></div>
+<p style="margin-top:14px;">1人の時間を削る必要はありません。「決めた分だけやって、ちゃんと閉じる」が、みちこさんに合う続け方だと思います。</p>
+<p>次回は<b>9月10日（木）ごろ</b>に、同じ3点セット（在庫管理シート・メルカリのリンク・1日の出品数）をこのページからお送りください。変化を一緒に確認します。</p>
+<p style="text-align:right; margin-top:10px;">森川くみこ＆AIチーム</p>
+`;
 
 var U="https://inrvprlyobghviklulcv.supabase.co/rest/v1/ailab_notes";
 var K="sb_publishable_ZrCNcsRHMci-l7Fns8QtIA_X22XZGJp";
@@ -366,7 +387,11 @@ function $(id){ return document.getElementById(id); }
 function val(id){ var el=$(id); return el?el.value.trim():""; }
 
 /* ===== レター描画 ===== */
-if(LETTER){ $("letterBody").innerHTML=LETTER; }
+if(LETTER){
+  var lb=$("letterBody"); lb.className="body"; lb.innerHTML=LETTER;
+  var chips=document.querySelector(".hero .chips");
+  if(chips) chips.insertAdjacentHTML("afterend",'<a class="mailband" href="#letter">おてがみが届いています ▼ 読む</a>');
+}
 
 /* ===== 下書きの自動保存・復元 ===== */
 try{

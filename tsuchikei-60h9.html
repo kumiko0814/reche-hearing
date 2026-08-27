@@ -116,6 +116,7 @@ section{padding:16px 16px 0;}
 
 /* ===== letter ===== */
 .letterwrap{padding:24px 16px 8px;}
+.mailband{display:block; margin:0 18px 16px; text-align:center; background:var(--grad); color:#fff; border-radius:999px; padding:11px; font-size:12.5px; font-weight:800; text-decoration:none; letter-spacing:.04em; box-shadow:0 8px 18px rgba(185,139,234,.35);}
 .letter-h{text-align:center; margin-bottom:12px;}
 .letter-h .en{font-size:10px; letter-spacing:.4em; color:#a98bc9; font-weight:800; padding-left:.4em;}
 .letter-h b{display:block; font-size:16px; color:var(--plum2); letter-spacing:.05em; margin-top:2px;}
@@ -307,7 +308,7 @@ footer p{font-size:10.5px; color:var(--sub); margin-top:8px;}
 </div>
 
 <!-- LETTER -->
-<div class="letterwrap">
+<div class="letterwrap" id="letter">
   <div class="letter-h"><span class="en">LETTER</span><b>つちけいさんへのおてがみ</b></div>
   <div class="paper">
     <div class="fromrow">
@@ -351,7 +352,28 @@ footer p{font-size:10.5px; color:var(--sub); margin-top:8px;}
 /* ===== 設定（生徒ごとにここだけ変える） ===== */
 var CFG={ student:"つちけい", memberId:"hearing_tsuchikei" };
 /* レター本文が決まったら、下のLETTERにHTML文字列を入れる（nullなら準備中表示） */
-var LETTER=null;
+var LETTER=`
+<p>つちけいさん、ご回答と3点セット、そして考え方まで言葉にして送ってくださってありがとうございました。</p>
+<p>先に、いただいた問いへの答えから。「YBAに絞り、一品一品に向き合い、売り切る」——方針は正しいです。しかも全体では、1〜7月の利益が月平均9万円台。すでに月10万に手が届く実力があります。その上で目標に置いた「仕入品だけで利益4万」は、次の山として筋の良い設定です。足りないのは質ではなく、<b>点数と回転</b>の2つだけです。</p>
+<p>仕入品の利益率は35%で、Meroneが目安にする30〜40%のちょうど真ん中。Gucciの帽子（¥35,900・利益¥12,292）、LVのTシャツ（¥17,800）など高単価帯で勝てていて、指値の筋は身についています。ここからは、その腕に「数」を掛け算します。</p>
+<div class="fb-block"><h4>よかったところ</h4><ul>
+<li><b>仕入品の利益率35%。</b>値付けと指値の設計が正確です。</li>
+<li><b>高単価帯での実績。</b>Gucci・LV・Prada・Herve Chapelierなど、ブランド小物・アパレルで勝てています。</li>
+<li><b>1日3品の出品習慣と週報の言語化。</b>直近週も売上¥41,649・販売率68%。</li>
+</ul></div>
+<div class="fb-block n"><h4>のびしろ（ここからが本題です）</h4><ul>
+<li><b>出品日を必ず記録する。</b>シート上、在庫131点のうち出品日が書いてあるのは9点でした。「売り切る」をテーマにするなら、どの子が60日待っているかが見えることが土台です。新規出品の分から日付記入を（過去分は空欄のままで大丈夫です）。</li>
+<li><b>仕入れ5万円は「12〜15点」に分ける。</b>1点あたり指値¥3,000〜4,000、予想売価1万円以上を狙える物を軸に。1点の利益が¥3,000〜6,000になり、月8〜10点の販売で4万円に届く計算です。母数が増えるほど「適正価格で仕入れる目」も速く育ちます。</li>
+<li><b>売り切りのルールを固定する。</b>60日で週末100円値下げ、90日でオークション形式へ（ブランド力のある物は、安いスタートでも入札が入ります）。シートで確認できた範囲で、仕入原価およそ30万円分の在庫が眠っています。仕入れ予算6ヶ月分の資金です。手放すのは負けではなく回収。3/15出品のAir Jordanから着手を。</li>
+<li><b>写真は「型」で解決できます。</b>1枚目は明るく大きく、左上にブランド名の文字入れ。ヴィトンなどはシリアル・刻印の写真を足すと動きが変わります。色は写真だけで完璧にせず、説明文に「実物は画像より少し濃いめです」と一文＋タグと質感の寄り写真1枚で十分伝わります。</li>
+<li><b>1つ確認させてください。</b>明細では、5月以降の仕入品の売却記録が月1〜5件でした。記入が追いついていないだけなら問題ありません。実際に販売が細っているなら原因は在庫の待機なので、上の売り切りルールが効きます。</li>
+<li><b>振り返りを指値につなぐ。</b>落札のたび「予想売価→実際の売価」の差をひと言メモ。テーマである「適正価格で仕入れる力」への最短ルートです。</li>
+</ul></div>
+<div class="first"><span class="t">FIRST STEP</span><b>60日以上動いていない在庫を3点、週末に100円値下げ</b><p>Air Jordanを1点目に。余裕があれば：新規出品から出品日の記入を開始／次回のYBAは5万円を12点前後に配分</p></div>
+<p style="margin-top:14px;">学びへの投資という目標、素敵です。出品日の記録と売り切りルール——この2つの習慣そのものが、商売の学びになります。</p>
+<p>次回は<b>9月10日（木）ごろ</b>に、同じ3点セット（在庫管理シート・メルカリのリンク・1日の出品数）をこのページからお送りください。変化を一緒に確認します。</p>
+<p style="text-align:right; margin-top:10px;">森川くみこ＆AIチーム</p>
+`;
 
 var U="https://inrvprlyobghviklulcv.supabase.co/rest/v1/ailab_notes";
 var K="sb_publishable_ZrCNcsRHMci-l7Fns8QtIA_X22XZGJp";
@@ -366,7 +388,11 @@ function $(id){ return document.getElementById(id); }
 function val(id){ var el=$(id); return el?el.value.trim():""; }
 
 /* ===== レター描画 ===== */
-if(LETTER){ $("letterBody").innerHTML=LETTER; }
+if(LETTER){
+  var lb=$("letterBody"); lb.className="body"; lb.innerHTML=LETTER;
+  var chips=document.querySelector(".hero .chips");
+  if(chips) chips.insertAdjacentHTML("afterend",'<a class="mailband" href="#letter">おてがみが届いています ▼ 読む</a>');
+}
 
 /* ===== 下書きの自動保存・復元 ===== */
 try{
